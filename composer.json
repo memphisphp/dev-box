@@ -1,0 +1,14 @@
+{
+    "name": "memphisphp/dev-box",
+    "description": "PHP development box",
+    "keywords": ["Memphis PHP", "PHP", "development", "Vagrant", "puppet"],
+    "license": "MIT",
+    "require": {
+        "slim/slim": "2.2.*",
+        "slim/extras": "2.0.*",
+        "twig/twig": "1.13.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    }
+}

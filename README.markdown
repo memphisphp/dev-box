@@ -12,13 +12,23 @@
 ```
 192.168.56.101    sandbox.dev
 ```
-* [Fork and clone](https://help.github.com/articles/fork-a-repo) this repository
-* `cd` into repo directory
+* Install the development box (see instructions below)
+* `cd` into the directory where you install the dev box
 * `$ vagrant up`
 * Start developing!
     * In almost all cases, any code you write should be placed in the project root
     * Any pages, images, javascript, and css should be added to the `public` directory
     * View your changes/progress at http://sandbox.dev (this assumes you've added sandbox.dev to your `/etc/hosts`)
+
+### Install with Composer
+* [Install Composer](http://getcomposer.org/doc/00-intro.md#installation-nix)
+* `$ composer create-project memphisphp/dev-box:dev-develop /path/to/project --keep-vcs`
+* Now follow the usage instructions above
+
+### Fork and Clone
+*This is the preferred method if you're planning on contributing*
+* [Fork and clone](https://help.github.com/articles/fork-a-repo) this repository
+* Now follow the usage instructions above
 
 ## Includes
 * [Composer](http://getcomposer.org)

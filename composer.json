@@ -1,6 +1,6 @@
 {
     "name": "memphisphp/dev-box",
-    "description": "PHP development box",
+    "description": "PHP development environment utilizing Vagrant and Puppet brought to you by Memphis PHP",
     "keywords": ["Memphis PHP", "PHP", "development", "Vagrant", "puppet"],
     "license": "MIT",
     "require": {

@@ -13,7 +13,7 @@ and title != 'software-properties-common'
 
     apt::key { '4F4EA0AAE5267A6C': }
 
-apt::ppa { 'ppa:ondrej/php5':
+apt::ppa { 'ppa:ondrej/php5-oldstable':
   require => Apt::Key['4F4EA0AAE5267A6C']
 }
 
@@ -110,7 +110,7 @@ puphpet::ini { 'xdebug':
     'xdebug.remote_handler = "dbgp"',
     'xdebug.remote_port = 9000'
   ],
-  ini     => '/etc/php5/conf.d/zzz_xdebug.ini',
+  ini     => '/etc/php5/mods-available/zzz_xdebug.ini',
   notify  => Service['apache'],
   require => Class['php'],
 }
@@ -119,7 +119,7 @@ puphpet::ini { 'php':
   value   => [
     'date.timezone = "America/Chicago"'
   ],
-  ini     => '/etc/php5/conf.d/zzz_php.ini',
+  ini     => '/etc/php5/mods-available/zzz_php.ini',
   notify  => Service['apache'],
   require => Class['php'],
 }
@@ -129,7 +129,7 @@ puphpet::ini { 'custom':
     'display_errors = On',
     'error_reporting = -1'
   ],
-  ini     => '/etc/php5/conf.d/zzz_custom.ini',
+  ini     => '/etc/php5/mods-available/zzz_custom.ini',
   notify  => Service['apache'],
   require => Class['php'],
 }

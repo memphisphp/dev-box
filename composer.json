@@ -4,8 +4,9 @@
     "keywords": ["Memphis PHP", "PHP", "development", "Vagrant", "puppet"],
     "license": "MIT",
     "require": {
-        "slim/slim": "2.2.*",
+        "slim/slim": "2.3.*",
         "slim/extras": "2.0.*",
+        "slim/views": "0.1.*",
         "twig/twig": "1.13.*"
     },
     "require-dev": {

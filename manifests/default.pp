@@ -162,3 +162,9 @@ apache::vhost { 'phpmyadmin':
   require     => Class['phpmyadmin'],
 }
 
+file { "/var/sites" :
+  ensure => directory,
+  group => "vagrant",
+  owner => "vagrant",
+  recurse => true,
+}

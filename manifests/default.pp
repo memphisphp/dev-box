@@ -39,6 +39,20 @@ apache::dotconf { 'custom':
 
 apache::module { 'rewrite': }
 
+exec { "change_httpd_user":
+    command => "sed -i 's/www-data/vagrant/g' /etc/apache2/envvars",
+    onlyif => "/bin/grep -q 'www-data' '/etc/apache2/envvars'",
+    notify => Service['apache2'],
+    require => Package['apache2'],
+}
+
+file { "/var/lock/apache2":
+    ensure => "directory",
+    owner => "vagrant",
+    group => "vagrant",
+    require => Exec['change_httpd_user'],
+}
+
 apache::vhost { 'sandbox.dev':
   server_name   => 'sandbox.dev',
   serveraliases => [
@@ -162,3 +176,9 @@ apache::vhost { 'phpmyadmin':
   require     => Class['phpmyadmin'],
 }
 
+file { "/var/sites" :
+  ensure => directory,
+  group => "vagrant",
+  owner => "vagrant",
+  recurse => true,
+}

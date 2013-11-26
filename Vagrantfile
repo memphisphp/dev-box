@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "precise64"
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.box = "ubuntu-precise12042-x64-vbox43"
+  config.vm.box_url = "https://puphpet.s3.amazonaws.com/ubuntu-precise12042-x64-vbox43.box"
 
   config.vm.network :private_network, ip: "192.168.56.101"
     config.ssh.forward_agent = true
